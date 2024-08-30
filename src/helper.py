@@ -23,19 +23,19 @@ def text_split(extracted_data):
 def download_hugging_face_embeddings():
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     return embeddings
+embeddings = download_hugging_face_embeddings()
+
 
 # def retrieve_documents(query, top_k=2):
-#     # Embed the user's query
 #     query_embedding = embeddings.embed_query(query)
-    
-#     # Perform similarity search in the Pinecone index
-#     search_result = index.query(
+#     search_result = pc.Index(index_name).query(
 #         vector=query_embedding,
 #         top_k=top_k,
 #         include_metadata=True,
 #         namespace="real"
 #     )
-    
+#     documents = [match['metadata']['text'] for match in search_result['matches']]
+#     return documents
 #     # Extract the retrieved documents (metadata["text"])
 #     documents = [match['metadata']['text'] for match in search_result['matches']]
 #     return documents
