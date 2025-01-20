@@ -5,4 +5,10 @@ langchain==0.0.225
 flask
 pypdf
 python-dotenv
+torch
+transformers
+onnx
+onnxruntime
+onnxruntime-tools
+
 -e .
